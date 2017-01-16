@@ -5,9 +5,10 @@ STRING='PATH'
 
 # Return TEXT_GREPPED: filtered on STRING
 grepProcOnString() { TEXT_GREPPED=$( $PROC | grep $STRING ) return $TEXT_GREPPED ; }
+# echo -e "Text grepped: $TEXT_GREPPED " ;
 
 # Return INT: LINE_COUNT_STRING_FILTER, count of filtered lines fron proc. 
-grepProcOnStringCount() { LINE_COUNT_STRING_FILTER=$( $PROC | grep $STRING | wc -l ); return $LINE_COUNT_STRING_FILTER; }
+grepProcOnStringCount() { LINE_COUNT_STRING_FILTER=$( $PROC | grep $STRING | wc -l ); return $LINE_COUNT_STRING_FILTER ; }
 # echo -e "Number of strings: $LINE_COUNT_STRING_FILTER " ;
 
 # Returns INT: LINE_COUNT_NO_FILTER, Count of total lines from proc.
@@ -20,11 +21,11 @@ SECOND=$( grepProcOnStringCount env PATH )
 
 THIRD=$( grepProcOnString env PATH )
 
-echo 'First: '$FIRST
+echo "First: "$FIRST ;
 
-echo 'Second: '$SECOND
+echo "Second: "$SECOND ;
 
-echo 'Third: '$THIRD
+echo "Third: "$THIRD ;
 
 
 
